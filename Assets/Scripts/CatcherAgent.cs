@@ -17,7 +17,7 @@ public class CatcherAgent: Agent {
 
     private int progressChecker = 5;
     private float previous_best;
-    private float sensor = 5;
+    private float sensor = 4;
 
 
     private void Awake()
@@ -70,7 +70,7 @@ public class CatcherAgent: Agent {
 
 
         state.Add(previous_best);
-
+        state.Add(currentDistance);
         state.Add(sensor);
 
         
@@ -127,17 +127,21 @@ public class CatcherAgent: Agent {
         {
             if (hit.collider.gameObject == Goal)
             {
-                if (sensor != 0.005)
+                if (sensor != 0.05)
                 {
                     sensor-=0.005f;
                 }
                 else
                 {
-                    sensor = 0.5f;
+                    sensor = 0.05f;
                     //print("sensing stoped");
                 }
                 //print("Yo......");
-                reward += 0.2f;
+
+                if (previous_best > currentDistance)
+                {
+                    reward += 0.2f;
+                }
             }
         }
     }
@@ -165,6 +169,10 @@ public class CatcherAgent: Agent {
             {
                 reward += 0.1f;
                 //print("yes");
+            }
+            else
+            {
+                reward -= 0.05f;
             }
             progressChecker = 5;
         }
