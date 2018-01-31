@@ -1,0 +1,11 @@
+{
+    "measure" : "reward",
+    "thresholds" : [1,5,8,12,15,18,20,23],
+    "min_lesson_length" : 3,
+    "signal_smoothing" : true, 
+    "parameters" : 
+    {
+        "x_variation" : [1,2,3,4,5,6,7,8,9],
+        "z_variation" : [1,2,3,4,5,6,7,8,9]
+    }
+}

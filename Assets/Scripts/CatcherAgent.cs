@@ -5,8 +5,9 @@ using UnityEngine;
 public class CatcherAgent: Agent {
 
     public BallThrower bT;
+    public BreakoutAcademy b_academy;
     public float currentDistance;
-
+    
 
 
     private int speed=10;
@@ -17,12 +18,16 @@ public class CatcherAgent: Agent {
 
     private int progressChecker = 5;
     private float previous_best;
+    //private float rangeBest;
     private float sensor = 4;
+
+
 
 
     private void Awake()
     {
         initPosition = this.transform.position;
+        b_academy = GameObject.FindObjectOfType<BreakoutAcademy>();
     }
 
 
@@ -46,16 +51,7 @@ public class CatcherAgent: Agent {
         Vector3 velocity = GetComponent<Rigidbody>().velocity;
         Vector3 goalVelocity = Goal.GetComponent<Rigidbody>().velocity;
 
-        //state.Add(goalVelocity.x);
-        //state.Add(goalVelocity.y);
-        //state.Add(goalVelocity.z);
-        //state.Add((Goal.transform.position.x - gameObject.transform.position.x));
-        //state.Add((Goal.transform.position.y - gameObject.transform.position.y));
-        //state.Add((Goal.transform.position.z - gameObject.transform.position.z));
-        //state.Add(previous_best);
-
-        //state.Add(velocity.x);
-        //state.Add(velocity.z);
+      
 
 
         var ballLoc = Goal.transform.position - gameObject.transform.position;
@@ -65,12 +61,11 @@ public class CatcherAgent: Agent {
 
         state.AddRange(new List<float>() { velocity.x, velocity.z });
 
-        //var paddleLoc = gameObject.transform.position - initPosition;
-        //state.AddRange(getFloatsXy(paddleLoc, 2.5f));
 
 
+        //state.Add(rangeBest);
         state.Add(previous_best);
-        state.Add(currentDistance);
+        //state.Add(currentDistance);
         state.Add(sensor);
 
         
@@ -127,7 +122,9 @@ public class CatcherAgent: Agent {
         {
             if (hit.collider.gameObject == Goal)
             {
-                if (sensor != 0.05)
+               
+                
+                if (sensor > 0.05)
                 {
                     sensor-=0.005f;
                 }
@@ -138,10 +135,19 @@ public class CatcherAgent: Agent {
                 }
                 //print("Yo......");
 
-                if (previous_best > currentDistance)
-                {
-                    reward += 0.2f;
-                }
+                //if (progressChecker == 5)
+                //{
+                //    if (currentDistance < rangeBest)
+                //    {
+                //        rangeBest = currentDistance;
+                //        reward += 0.2f;
+                //    }
+                //    else
+                //    {
+                //        reward += -0.05f;
+                //    }
+                //}
+                
             }
         }
     }
@@ -170,14 +176,14 @@ public class CatcherAgent: Agent {
                 reward += 0.1f;
                 //print("yes");
             }
-            else
-            {
-                reward -= 0.05f;
-            }
+            //else
+            //{
+            //    reward -= 0.05f;
+            //}
             progressChecker = 5;
         }
 
-        
+
         if (done == false)
         {
             if (done == false) reward += -0.005f;
@@ -189,6 +195,7 @@ public class CatcherAgent: Agent {
         {
             reward = -10f;
             done = true;
+            b_academy.failCount++;
             return;
         }
 
@@ -197,6 +204,7 @@ public class CatcherAgent: Agent {
             reward = 10;
             done = true;
             solved++;
+            b_academy.successCount++;
             //print(solved);
             return;
         }
@@ -214,6 +222,7 @@ public class CatcherAgent: Agent {
         this.GetComponent<Rigidbody>().velocity = Vector3.zero;
         currentDistance = Vector3.Distance(this.transform.position,Goal.transform.position);
         previous_best = currentDistance;
+        //rangeBest = currentDistance;
     }
 
 
