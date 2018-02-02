@@ -1,6 +1,6 @@
-1/24/2018 10:01:46 PM
+2/2/2018 9:12:41 PM
  
 Exception
-JsonSerializationException: Unexpected end when deserializing array. Path 'memory.Brain[542]', line 1, position 2920.
+JsonSerializationException: Unexpected end when deserializing array. Path 'value.Brain[16]', line 1, position 4380.
 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ThrowUnexpectedEndException (Newtonsoft.Json.JsonReader reader, Newtonsoft.Json.Serialization.JsonContract contract, System.Object currentObject, System.String message) (at <ca9d8d8bb33348708c9d738f817326f6>:0)
 

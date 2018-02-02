@@ -11,7 +11,7 @@ public class BallThrower : MonoBehaviour {
     public GameObject pivot;
     public GameObject pointOfFire;
 
-
+    
     
 
 
@@ -24,7 +24,7 @@ public class BallThrower : MonoBehaviour {
         ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
         ball.transform.position = pointOfFire.transform.position;
         ball.transform.rotation = pivot.transform.rotation;
-        ball.GetComponent<Rigidbody>().AddForce(pointOfFire.transform.up * 800);
+        ball.GetComponent<Rigidbody>().AddForce(pointOfFire.transform.up * Random.Range(800,900));
 
     }
 

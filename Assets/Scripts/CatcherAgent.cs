@@ -71,9 +71,9 @@ public class CatcherAgent: Agent {
         state.Add((Goal.transform.position.y - area.transform.position.y));
         state.Add((Goal.transform.position.z + 5 - area.transform.position.z));
 
-        state.Add((transform.position.x - area.transform.position.x));
-        state.Add((transform.position.y - area.transform.position.y));
-        state.Add((transform.position.z + 5 - area.transform.position.z));
+        state.Add((transform.position.x - Goal.transform.position.x));
+        state.Add((transform.position.y - Goal.transform.position.y));
+        state.Add((transform.position.z + 5 - Goal.transform.position.z));
 
         state.AddRange(new List<float>() { goalVelocity.x, goalVelocity.y, goalVelocity.z });
 
@@ -204,7 +204,7 @@ public class CatcherAgent: Agent {
 
         if (currentDistance > 30)
         {
-            reward = -1000f;
+            reward = -25f;
             done = true;
             b_academy.failCount++;
             return;
@@ -212,7 +212,7 @@ public class CatcherAgent: Agent {
 
         if (currentDistance <= 0.8f)
         {
-            reward = 1000;
+            reward = 25;
             done = true;
             solved++;
             b_academy.successCount++;
