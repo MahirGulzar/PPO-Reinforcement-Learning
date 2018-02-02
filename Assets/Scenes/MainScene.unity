@@ -653,6 +653,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1041474420}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &56073053
 MeshRenderer:
@@ -788,19 +789,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 59910613}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &65195718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 943466ab374444748a364f9d6c3e2fe2, type: 3}
-  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  broadcast: 1
-  brain: {fileID: 1307990437}
 --- !u!1 &69458833
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,6 +890,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1140004032}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &111108506
 MeshRenderer:
@@ -1083,6 +1072,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1556067705}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &137458895
 MeshRenderer:
@@ -1881,6 +1871,18 @@ Transform:
   m_Father: {fileID: 626721857}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &323074104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35813a1be64e144f887d7d5f15b963fa, type: 3}
+  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  brain: {fileID: 1307990437}
 --- !u!1 &337539762
 GameObject:
   m_ObjectHideFlags: 0
@@ -2010,6 +2012,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1900022940}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &345420286
 MeshRenderer:
@@ -3336,6 +3339,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 371218625}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &485402831
 MeshRenderer:
@@ -4748,6 +4752,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1977278522}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &554760702
 MeshRenderer:
@@ -5263,6 +5268,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1913001044}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &658437533
 MeshRenderer:
@@ -5433,6 +5439,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 926629992}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &686248626
 MeshRenderer:
@@ -5485,7 +5492,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 686248622}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &700509824
+--- !u!114 &708897636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -5493,33 +5500,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41e9bda8f3cf1492fa74926a530f6f70, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b23992c8eb17439887f5e944bf04a40, type: 3}
   m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   broadcast: 1
-  continuousPlayerActions:
-  - key: 97
-    index: 0
-    value: -1
-  - key: 100
-    index: 0
-    value: 1
-  - key: 115
-    index: 1
-    value: -1
-  - key: 119
-    index: 1
-    value: 1
-  discretePlayerActions:
-  - key: 97
-    value: 0
-  - key: 100
-    value: 1
-  - key: 119
-    value: 2
-  - key: 115
-    value: 3
-  defaultAction: 4
+  graphModel: {fileID: 4900000, guid: 28a2e647029d6554b9fc43419627ec25, type: 3}
+  graphScope: 
+  graphPlaceholders: []
+  BatchSizePlaceholderName: batch_size
+  StatePlacholderName: state
+  RecurrentInPlaceholderName: recurrent_in
+  RecurrentOutPlaceholderName: recurrent_out
+  ObservationPlaceholderName: []
+  ActionPlaceholderName: action
   brain: {fileID: 1307990437}
 --- !u!1 &743560277
 GameObject:
@@ -5611,6 +5604,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &822429431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e9bda8f3cf1492fa74926a530f6f70, type: 3}
+  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  broadcast: 1
+  continuousPlayerActions:
+  - key: 97
+    index: 0
+    value: -1
+  - key: 100
+    index: 0
+    value: 1
+  - key: 115
+    index: 1
+    value: -1
+  - key: 119
+    index: 1
+    value: 1
+  discretePlayerActions:
+  - key: 97
+    value: 0
+  - key: 100
+    value: 1
+  - key: 119
+    value: 2
+  - key: 115
+    value: 3
+  defaultAction: 4
+  brain: {fileID: 1307990437}
 --- !u!1 &825059673
 GameObject:
   m_ObjectHideFlags: 0
@@ -5902,6 +5931,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 825059674}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &878597380
 MeshRenderer:
@@ -6057,6 +6087,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1561325632}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &895423945
 MeshRenderer:
@@ -7089,6 +7120,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1194649129}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &1071405810
 MeshRenderer:
@@ -7979,6 +8011,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 2132626438}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &1202007709
 MeshRenderer:
@@ -8426,7 +8459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brainParameters:
-    stateSize: 10
+    stateSize: 16
     actionSize: 4
     memorySize: 24
     cameraResolutions: []
@@ -8437,13 +8470,13 @@ MonoBehaviour:
     - 
     actionSpaceType: 0
     stateSpaceType: 1
-  brainType: 3
+  brainType: 2
   CoreBrains:
-  - {fileID: 700509824}
-  - {fileID: 65195718}
-  - {fileID: 1603633333}
-  - {fileID: 2144346147}
-  instanceID: 11330
+  - {fileID: 822429431}
+  - {fileID: 1378284571}
+  - {fileID: 323074104}
+  - {fileID: 708897636}
+  instanceID: 51046
 --- !u!1001 &1315102277
 Prefab:
   m_ObjectHideFlags: 0
@@ -8581,6 +8614,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1235120612}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &1354082638
 MeshRenderer:
@@ -8663,6 +8697,19 @@ Transform:
   m_Father: {fileID: 1900022941}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1378284571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943466ab374444748a364f9d6c3e2fe2, type: 3}
+  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  broadcast: 1
+  brain: {fileID: 1307990437}
 --- !u!1 &1379794060
 GameObject:
   m_ObjectHideFlags: 0
@@ -9435,6 +9482,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1127143325}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &1477128474
 MeshRenderer:
@@ -9831,6 +9879,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 583567949}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &1541196856
 MeshRenderer:
@@ -9956,6 +10005,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1529233530}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &1541603482
 MeshRenderer:
@@ -10081,6 +10131,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1788237256}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &1550363431
 MeshRenderer:
@@ -10281,18 +10332,6 @@ Transform:
   m_Father: {fileID: 2017478761}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1603633333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35813a1be64e144f887d7d5f15b963fa, type: 3}
-  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  brain: {fileID: 1307990437}
 --- !u!1 &1605047658
 GameObject:
   m_ObjectHideFlags: 0
@@ -10838,6 +10877,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 842452481}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &1718756320
 MeshRenderer:
@@ -11117,6 +11157,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1728697183}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &1746741881
 MeshRenderer:
@@ -11381,6 +11422,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 557554914}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &1760912031
 MeshRenderer:
@@ -11506,6 +11548,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 2018041385}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &1774135284
 MeshRenderer:
@@ -12041,6 +12084,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 37059587}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &1867767461
 MeshRenderer:
@@ -12251,6 +12295,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1462477832}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &1890750813
 MeshRenderer:
@@ -12560,6 +12605,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 281120484}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &1904054705
 MeshRenderer:
@@ -12730,6 +12776,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1464397237}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &1916723883
 MeshRenderer:
@@ -13237,6 +13284,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 294081596}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &1945218306
 MeshRenderer:
@@ -13445,6 +13493,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 674877057}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &1972909341
 MeshRenderer:
@@ -13728,6 +13777,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1748806347}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &2011173152
 MeshRenderer:
@@ -14222,6 +14272,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 31024339}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &2102851589
 MeshRenderer:
@@ -14347,6 +14398,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1445348342}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &2107586812
 MeshRenderer:
@@ -14500,6 +14552,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1742701994}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &2121547381
 MeshRenderer:
@@ -14625,6 +14678,7 @@ MonoBehaviour:
   id: 0
   bT: {fileID: 1449033561}
   b_academy: {fileID: 0}
+  area: {fileID: 0}
   currentDistance: 0
 --- !u!23 &2131619937
 MeshRenderer:
@@ -14752,28 +14806,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2144346147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b23992c8eb17439887f5e944bf04a40, type: 3}
-  m_Name: (Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  broadcast: 1
-  graphModel: {fileID: 4900000, guid: 28a2e647029d6554b9fc43419627ec25, type: 3}
-  graphScope: 
-  graphPlaceholders: []
-  BatchSizePlaceholderName: batch_size
-  StatePlacholderName: state
-  RecurrentInPlaceholderName: recurrent_in
-  RecurrentOutPlaceholderName: recurrent_out
-  ObservationPlaceholderName: []
-  ActionPlaceholderName: action
-  brain: {fileID: 1307990437}
 --- !u!1 &2145459975
 GameObject:
   m_ObjectHideFlags: 0

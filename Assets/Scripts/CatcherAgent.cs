@@ -6,6 +6,7 @@ public class CatcherAgent: Agent {
 
     public BallThrower bT;
     public BreakoutAcademy b_academy;
+    public GameObject area;
     public float currentDistance;
     
 
@@ -28,6 +29,7 @@ public class CatcherAgent: Agent {
     {
         initPosition = this.transform.position;
         b_academy = GameObject.FindObjectOfType<BreakoutAcademy>();
+        area = this.transform.parent.gameObject;
     }
 
 
@@ -51,11 +53,27 @@ public class CatcherAgent: Agent {
         Vector3 velocity = GetComponent<Rigidbody>().velocity;
         Vector3 goalVelocity = Goal.GetComponent<Rigidbody>().velocity;
 
-      
+        // state: ball location, agent location
+        // alternative state: ball relative location
+        // action: forward, backward, left, right
+        // reward: 1 when catches the ball + episode ends, 0 when does not touch the ball + timeout after n steps
+        // additional reward: -0.01 for each timestep
 
 
-        var ballLoc = Goal.transform.position - gameObject.transform.position;
-        state.AddRange(new List<float>() { ballLoc.x, ballLoc.y, ballLoc.z });
+        //var ballLoc = Goal.transform.position - gameObject.transform.position;
+        //state.AddRange(new List<float>() { ballLoc.x, ballLoc.y, ballLoc.z });
+
+        state.Add((transform.position.x - area.transform.position.x));
+        state.Add((transform.position.y - area.transform.position.y));
+        state.Add((transform.position.z + 5 - area.transform.position.z));
+
+        state.Add((Goal.transform.position.x - area.transform.position.x));
+        state.Add((Goal.transform.position.y - area.transform.position.y));
+        state.Add((Goal.transform.position.z + 5 - area.transform.position.z));
+
+        state.Add((transform.position.x - area.transform.position.x));
+        state.Add((transform.position.y - area.transform.position.y));
+        state.Add((transform.position.z + 5 - area.transform.position.z));
 
         state.AddRange(new List<float>() { goalVelocity.x, goalVelocity.y, goalVelocity.z });
 
@@ -126,7 +144,7 @@ public class CatcherAgent: Agent {
                 
                 if (sensor > 0.05)
                 {
-                    sensor-=0.005f;
+                    sensor-=0.05f;
                 }
                 else
                 {
@@ -135,19 +153,12 @@ public class CatcherAgent: Agent {
                 }
                 //print("Yo......");
 
-                //if (progressChecker == 5)
-                //{
-                //    if (currentDistance < rangeBest)
-                //    {
-                //        rangeBest = currentDistance;
-                //        reward += 0.2f;
-                //    }
-                //    else
-                //    {
-                //        reward += -0.05f;
-                //    }
-                //}
-                
+                if (progressChecker == 5)
+                {
+                    reward += 0.2f;
+                    
+                }
+
             }
         }
     }
@@ -193,7 +204,7 @@ public class CatcherAgent: Agent {
 
         if (currentDistance > 30)
         {
-            reward = -10f;
+            reward = -1000f;
             done = true;
             b_academy.failCount++;
             return;
@@ -201,7 +212,7 @@ public class CatcherAgent: Agent {
 
         if (currentDistance <= 0.8f)
         {
-            reward = 10;
+            reward = 1000;
             done = true;
             solved++;
             b_academy.successCount++;
